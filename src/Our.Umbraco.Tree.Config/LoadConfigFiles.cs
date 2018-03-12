@@ -71,7 +71,16 @@ namespace Our.Umbraco.Tree.Config
 			    }
 			    xNode.OpenIcon = xNode.Icon;
 				tree.Add(xNode);
-			}
+
+                //Add App_Plugins/Merchello/config/Merchello.config
+                var merchNode = XmlTreeNode.Create(this);
+                merchNode.NodeID = "MerchelloConfig";
+                merchNode.Action = "javascript:openConfigEditor('../App_Plugins/Merchello/config/merchello.config');";
+                merchNode.Text = "Merchello.config";
+                merchNode.Icon = "icon-document";
+                merchNode.OpenIcon = merchNode.Icon;
+                tree.Add(merchNode);
+            }
 		}
 
 		/// <summary>
