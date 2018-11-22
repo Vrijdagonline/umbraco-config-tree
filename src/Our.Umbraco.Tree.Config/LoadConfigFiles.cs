@@ -80,6 +80,14 @@ namespace Our.Umbraco.Tree.Config
                 merchNode.Icon = "icon-document";
                 merchNode.OpenIcon = merchNode.Icon;
                 tree.Add(merchNode);
+
+                var optimusConfig = XmlTreeNode.Create(this);
+                optimusConfig.NodeID = "OptimusConfig";
+                optimusConfig.Action = "javascript:openConfigEditor('../App_Plugins/Optimus/Config/bundles.config');";
+                optimusConfig.Text = "Bundles.config";
+                optimusConfig.Icon = "icon-shopping-basket";
+                optimusConfig.OpenIcon = optimusConfig.Icon;
+                tree.Add(optimusConfig);
             }
 		}
 
